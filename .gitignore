@@ -1,0 +1,28 @@
+
+src/1\.0/\.vs/
+
+src/1\.0/Falcon RFID/bin/
+
+src/1\.0/Falcon RFID/obj/
+
+src/1\.0/Falcon RFID Commons/bin/
+
+src/1\.0/Falcon RFID Commons/obj/
+
+src/1\.0/Falcon RFID GUI/bin/
+
+src/1\.0/Falcon RFID GUI/obj/
+
+src/1\.0/GEV Mini Webserver/bin/
+
+src/1\.0/GEV Mini Webserver/obj/
+
+src/1\.0/RFID Client/bin/
+
+src/1\.0/RFID Client/obj/
+
+src/1\.0/RFID Comm/bin/
+
+src/1\.0/RFID Comm/obj/
+
+src/1\.0/packages/
