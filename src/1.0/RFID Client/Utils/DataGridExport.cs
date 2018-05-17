@@ -12,14 +12,14 @@ namespace GEV.Falcon.RFID.Utils
     {
         public static void ExportDataGridAsCSV(DataGridView dataGrid, string path)
         {
-            using (StreamWriter sw = new StreamWriter(path, false, Encoding.ASCII, 4096))
+            using (StreamWriter sw = new StreamWriter(path, false, Encoding.UTF8, 4096))
             {
                 List<string> headers = new List<string>();
                 foreach (DataGridViewColumn col in dataGrid.Columns)
                 {
                     headers.Add(col.HeaderText);
                 }
-                sw.WriteLine(String.Join(";", headers));
+                sw.WriteLine(String.Join("\t", headers));
 
                 foreach(DataGridViewRow row in dataGrid.Rows)
                 {
@@ -35,7 +35,7 @@ namespace GEV.Falcon.RFID.Utils
                             cells.Add("");
                         }
                     }
-                    sw.WriteLine(String.Join(";", cells));
+                    sw.WriteLine(String.Join("\t", cells));
                 }
             }
         }

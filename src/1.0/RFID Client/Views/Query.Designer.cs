@@ -70,8 +70,8 @@
             this.gclDataGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gclDataGrid1.EnableHeadersVisualStyles = false;
             this.gclDataGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
-            this.gclDataGrid1.Location = new System.Drawing.Point(0, 57);
-            this.gclDataGrid1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gclDataGrid1.Location = new System.Drawing.Point(0, 70);
+            this.gclDataGrid1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gclDataGrid1.Name = "gclDataGrid1";
             this.gclDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -85,7 +85,7 @@
             this.gclDataGrid1.RowHeadersVisible = false;
             this.gclDataGrid1.RowTemplate.Height = 24;
             this.gclDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gclDataGrid1.Size = new System.Drawing.Size(812, 433);
+            this.gclDataGrid1.Size = new System.Drawing.Size(1083, 533);
             this.gclDataGrid1.TabIndex = 7;
             // 
             // panel1
@@ -96,19 +96,18 @@
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 25);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(0, 31);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(812, 32);
+            this.panel1.Size = new System.Drawing.Size(1083, 39);
             this.panel1.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.Size = new System.Drawing.Size(59, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Kezdés:";
             // 
@@ -121,10 +120,10 @@
             this.gclButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(158)))), ((int)(((byte)(202)))));
             this.gclButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gclButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.gclButton1.Location = new System.Drawing.Point(418, 1);
-            this.gclButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gclButton1.Location = new System.Drawing.Point(557, 1);
+            this.gclButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gclButton1.Name = "gclButton1";
-            this.gclButton1.Size = new System.Drawing.Size(81, 26);
+            this.gclButton1.Size = new System.Drawing.Size(108, 32);
             this.gclButton1.TabIndex = 5;
             this.gclButton1.Text = "Lekérdezés";
             this.gclButton1.UseThemeColors = true;
@@ -134,33 +133,30 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "yyyy. MM. dd. hh:mm:ss";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(51, 5);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(68, 6);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(152, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(201, 22);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.CustomFormat = "yyyy. MM. dd. hh:mm:ss";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(264, 5);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(352, 6);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.ShowUpDown = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(151, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker2.TabIndex = 1;
             this.dateTimePicker2.Value = new System.DateTime(2018, 5, 15, 0, 0, 0, 0);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(226, 7);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(301, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Vége:";
             // 
@@ -169,9 +165,9 @@
             this.panel2.Controls.Add(this.gclComboBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(812, 25);
+            this.panel2.Size = new System.Drawing.Size(1083, 31);
             this.panel2.TabIndex = 9;
             // 
             // gclComboBox1
@@ -182,28 +178,28 @@
             this.gclComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.gclComboBox1.DropDownWidth = 0;
             this.gclComboBox1.IsDroppedDown = false;
-            this.gclComboBox1.Location = new System.Drawing.Point(4, 2);
-            this.gclComboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gclComboBox1.Location = new System.Drawing.Point(5, 2);
+            this.gclComboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gclComboBox1.MaxDropDownItems = 0;
             this.gclComboBox1.Name = "gclComboBox1";
             this.gclComboBox1.SelectedIndex = -1;
             this.gclComboBox1.SelectedItem = null;
-            this.gclComboBox1.Size = new System.Drawing.Size(293, 21);
+            this.gclComboBox1.Size = new System.Drawing.Size(391, 23);
             this.gclComboBox1.Soreted = false;
             this.gclComboBox1.TabIndex = 0;
             this.gclComboBox1.Text = "gclComboBox1";
             // 
             // Query
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
             this.Controls.Add(this.gclDataGrid1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Query";
-            this.Size = new System.Drawing.Size(812, 490);
+            this.Size = new System.Drawing.Size(1083, 603);
             ((System.ComponentModel.ISupportInitialize)(this.gclDataGrid1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
