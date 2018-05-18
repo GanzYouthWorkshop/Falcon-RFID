@@ -38,8 +38,8 @@ namespace GEV.Falcon.RFID.Views
                 "Munkanap",
                 "Megérkezés",
                 "Távozás",
-                "Munkaidő",
-                "Túlóra"
+                "Munkaidő"
+                //"Túlóra"
             }, 1);
 
             List<CheckinEntry> list = ReaderStation.QueryAll(this.dateTimePicker1.Value, this.dateTimePicker2.Value);
@@ -88,8 +88,8 @@ namespace GEV.Falcon.RFID.Views
                         min.ToString("yyyy. MMMM dd."),
                         min.ToString("HH:mm"),
                         maxStr,
-                        workTimeStr,
-                        overTimeStr
+                        workTimeStr
+                        //overTimeStr
                       );
 
 
