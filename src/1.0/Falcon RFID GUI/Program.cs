@@ -25,7 +25,7 @@ namespace Falcon_RFID_GUI
             }
             else
             {
-                MessageBox.Show("Program már fut!");
+                MessageBox.Show("Program már fut! Ha valaki be van jelentkezve, kérd meg, hogy jelentkezzen ki!");
             }
 
         }

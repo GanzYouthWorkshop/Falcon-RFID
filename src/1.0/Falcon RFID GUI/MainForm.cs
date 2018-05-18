@@ -51,6 +51,7 @@ namespace Falcon_RFID_GUI
         {
             this.label1.Text = "Kártya leolvasható...";
             this.label1.BackColor = GCLColors.PanelBackground;
+            this.label1.Font = new Font(label1.Font.Name, 48F);
             this.m_TextUpdate.Enabled = false;
         }
 
@@ -66,9 +67,34 @@ namespace Falcon_RFID_GUI
                 string s = this.gclTextbox1.Text.Replace('ö', '0');
                 s = String.Join("", s.Split(new char[]{ '\n', '\r' }));
                 this.gclTextbox1.Text = "";
+
+
+
+                bool firstCheckin = true;
+                string today = DateTime.Today.ToString(CheckinEntry.DATETIME_STRING_FORMAT);
+                string now = DateTime.Now.ToString(CheckinEntry.DATETIME_STRING_FORMAT);
+                DateTime lastCheckin = DateTime.Today;
+                SQLiteDataReader query = this.DB.Query(String.Format("SELECT * FROM Checkins WHERE (Date BETWEEN '{0}' AND '{1}') AND Card = '{2}' ORDER BY Date ASC LIMIT 1", today, now, s.TrimStart('0')));
+                if (query.Read())
+                {
+                    lastCheckin = DateTime.Parse(query["Date"].ToString());
+                    firstCheckin = false;
+                }
+
+
+
                 DB.Checkin(s);
 
-                this.label1.Text = "Kártya leolvasva!";
+                if(firstCheckin)
+                {
+                    this.label1.Text = "Kártya leolvasva!";
+                }
+                else
+                {
+                    TimeSpan workTime = DateTime.Now.Subtract(lastCheckin);
+                    this.label1.Text = String.Format("Kártya leolvasva!\nJelenlegi munkaidő: {0} óra {1} perc", workTime.Hours, workTime.Minutes);
+                    this.label1.Font = new Font(label1.Font.Name, 22F);
+                }
                 this.label1.BackColor = GCLColors.SuccessGreen;
                 this.m_TextUpdate.Enabled = true;
             }
@@ -103,17 +129,6 @@ namespace Falcon_RFID_GUI
             ser.Serialize(handler.OutputStream, list);
 
             return true;
-        }
-
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Hide();
-            e.Cancel = true;
-        }
-
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            this.Show();
         }
     }
 }

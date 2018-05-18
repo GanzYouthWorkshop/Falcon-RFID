@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.gclWindowHeader1 = new GEV.Layouts.GCLWindowHeader();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.gclTextbox1 = new GEV.Layouts.GCLTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.gclPanel1 = new GEV.Layouts.GCLPanel();
@@ -51,13 +48,6 @@
             this.gclWindowHeader1.TabIndex = 999;
             this.gclWindowHeader1.TabStop = false;
             this.gclWindowHeader1.Title = "Falcon RFID";
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "Falcon RFID";
-            this.notifyIcon1.Visible = true;
-            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // gclTextbox1
             // 
@@ -110,7 +100,6 @@
             this.Controls.Add(this.gclWindowHeader1);
             this.Name = "MainForm";
             this.Text = "Falcon RFID";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.gclPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -119,7 +108,6 @@
         #endregion
 
         private GEV.Layouts.GCLWindowHeader gclWindowHeader1;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private GEV.Layouts.GCLTextbox gclTextbox1;
         private System.Windows.Forms.Label label1;
         private GEV.Layouts.GCLPanel gclPanel1;
