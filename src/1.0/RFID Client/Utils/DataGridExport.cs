@@ -19,7 +19,7 @@ namespace GEV.Falcon.RFID.Utils
                 {
                     headers.Add(col.HeaderText);
                 }
-                sw.WriteLine(String.Join("\t", headers));
+                sw.WriteLine(String.Join(";", headers));
 
                 foreach(DataGridViewRow row in dataGrid.Rows)
                 {
@@ -35,7 +35,7 @@ namespace GEV.Falcon.RFID.Utils
                             cells.Add("");
                         }
                     }
-                    sw.WriteLine(String.Join("\t", cells));
+                    sw.WriteLine(String.Join(";", cells));
                 }
             }
         }
