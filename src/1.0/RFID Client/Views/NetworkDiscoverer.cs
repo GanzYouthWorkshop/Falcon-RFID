@@ -11,12 +11,15 @@ using System.Net.Http;
 using RFID_Client;
 using GEV.Layouts;
 using GEV.Falcon.RFID.Client;
+using System.Net;
+using System.IO;
+using GEV.Falcon.RFID.Client.Discovery;
 
 namespace GEV.Falcon.RFID.Views
 {
-    public partial class NetworkDiscoverer : UserControl
+    public partial class NetworkDiscovery : UserControl
     {
-        public NetworkDiscoverer()
+        public NetworkDiscovery()
         {
             InitializeComponent();
 
@@ -32,8 +35,6 @@ namespace GEV.Falcon.RFID.Views
 
         private async void gclButton1_Click(object sender, EventArgs e)
         {
-            HttpClient client = new HttpClient();
-            client.Timeout = new TimeSpan(0, 0, 0, 0, 75);
 
             this.lmProgress.Value = 0;
             this.lmProgress.Title = "Hálózati felderítés folyamatban...";
@@ -45,42 +46,18 @@ namespace GEV.Falcon.RFID.Views
 
             for (int i = 1; i < 255; i++)
             {
-                try
+                NetworkDiscoverer disco = new NetworkDiscoverer()
                 {
-                    string responseString = await client.GetStringAsync(String.Format("http://" + MainWindow.Config.Network + ":8080/falcon_rfid_disco.gev", i));
-                    string[] values = responseString.Split('-');
+                    Address = String.Format("http://" + MainWindow.Config.Network + ":8080/falcon_rfid_disco.gev", i),
+                    ID = i
+                };
+                disco.DiscoverySuccess += OnSuccess;
+                disco.DiscoveryFailed += OnFail;
 
-
-                    ReaderStation station = MainWindow.Config.LastReaderStations.FirstOrDefault(s => s.StationID == values[0]);
-                    if(station != null)
-                    {
-                        foreach(DataGridViewRow row in this.dgNetwork.Rows)
-                        {
-                            if(row.Cells[2].Value.ToString() == station.StationID)
-                            {
-                                row.Cells[0].Style.ForeColor = GCLColors.SuccessGreen;
-                                row.Cells[1].Value = String.Format(MainWindow.Config.Network, i);
-                                station.IP = String.Format(MainWindow.Config.Network, i);
-                                station.Status = ReaderStation.Statuses.Online;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        MainWindow.Config.LastReaderStations.Add(new ReaderStation()
-                        {
-                            IP = String.Format(MainWindow.Config.Network, i),
-                            StationID = values[0],
-                            DisplayName = values[1],
-                            Status = ReaderStation.Statuses.Online
-                        });
-                        int row = this.dgNetwork.Rows.Add("■", String.Format(MainWindow.Config.Network, i), values[0], values[1]);
-                        this.dgNetwork.Rows[row].Cells[0].Style.ForeColor = GCLColors.SuccessGreen;
-                    }
-                }
-                catch (Exception) { }
-                this.lmProgress.Value++;
+                disco.Start();
             }
+
+
             foreach (DataGridViewRow row in this.dgNetwork.Rows)
             {
                 if (row.Cells[0].Style.ForeColor != GCLColors.SuccessGreen)
@@ -94,8 +71,63 @@ namespace GEV.Falcon.RFID.Views
                 r.Status = ReaderStation.Statuses.NotKnown;
             }
 
-            this.lmProgress.Title = "Hálózati felderítés kész.";
-            MainWindow.Config.Save("config.xml");
+        }
+
+        private void OnFail(object sender, EventArgs e)
+        {
+            this.lmProgress.Value++;
+
+            this.CheckComplete();
+        }
+
+        private void OnSuccess(object sender, string[] e)
+        {
+            this.BeginInvoke(new Action(() =>
+            {
+                this.lmProgress.Value++;
+                int ID = (sender as NetworkDiscoverer).ID;
+
+                ReaderStation station = MainWindow.Config.LastReaderStations.FirstOrDefault(s => s.StationID == e[0]);
+                if (station != null)
+                {
+                    foreach (DataGridViewRow row in this.dgNetwork.Rows)
+                    {
+                        if (row.Cells[2].Value != null && row.Cells[2].Value.ToString() == station.StationID)
+                        {
+                            row.Cells[0].Style.ForeColor = GCLColors.SuccessGreen;
+                            row.Cells[1].Value = String.Format(MainWindow.Config.Network, ID);
+                            station.IP = String.Format(MainWindow.Config.Network, ID);
+                            station.Status = ReaderStation.Statuses.Online;
+                        }
+                    }
+                }
+                else
+                {
+                    MainWindow.Config.LastReaderStations.Add(new ReaderStation()
+                    {
+                        IP = String.Format(MainWindow.Config.Network, ID),
+                        StationID = e[0],
+                        DisplayName = e[1],
+                        Status = ReaderStation.Statuses.Online
+                    });
+                    int row = this.dgNetwork.Rows.Add("■", String.Format(MainWindow.Config.Network, ID), e[0], e[1]);
+                    this.dgNetwork.Rows[row].Cells[0].Style.ForeColor = GCLColors.SuccessGreen;
+                }
+            }));
+
+            this.CheckComplete();
+        }
+
+        private void CheckComplete()
+        {
+            if(this.lmProgress.Value >= 253)
+            {
+                this.BeginInvoke(new Action(() =>
+                {
+                    this.lmProgress.Title = "Hálózati felderítés kész.";
+                    MainWindow.Config.Save("config.xml");
+                }));
+            }
         }
     }
 }

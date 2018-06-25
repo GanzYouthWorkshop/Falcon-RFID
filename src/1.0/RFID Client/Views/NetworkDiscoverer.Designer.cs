@@ -1,6 +1,6 @@
 ﻿namespace GEV.Falcon.RFID.Views
 {
-    partial class NetworkDiscoverer
+    partial class NetworkDiscovery
     {
         /// <summary> 
         /// Required designer variable.

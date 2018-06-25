@@ -2,11 +2,13 @@
 using GEV.Falcon.RFID.Client;
 using GEV.Falcon.RFID.Utils;
 using GEV.Layouts;
+using GEV.Layouts.Extended.Cairo.IO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -67,11 +69,11 @@ namespace RFID_Client
         private void gclButton1_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.FileName = "kimutatás.csv";
-            sfd.Filter = ".csv|CSV fájlok";
-            if(sfd.ShowDialog() == DialogResult.OK)
+            sfd.FileName = "kimutatás.xlsx";
+            sfd.Filter = ".xlsx|Excel XLSX fájlok";
+            if (sfd.ShowDialog() == DialogResult.OK)
             {
-                DataGridExport.ExportDataGridAsCSV(this.query1.gclDataGrid1, sfd.FileName);
+                this.query1.cairoSpreadsheet1.Save(sfd.FileName, FileFormat.Excel2007);
             }
         }
 
@@ -83,6 +85,22 @@ namespace RFID_Client
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 DataGridExport.ExportDataGridAsCSV(this.log1.gclDataGrid1, sfd.FileName);
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            using (PrintDocument doc = this.query1.cairoSpreadsheet1.CurrentWorksheet.CreatePrintSession().PrintDocument)
+            using (var pd = new PrintPreviewDialog())
+            {
+                pd.Document = doc;
+                //pd.UseEXDialog = true;  // in 64bit Windows
+
+                if (pd.ShowDialog() == DialogResult.OK)
+                {
+                    //doc.PrinterSettings = pd.PrinterSettings;
+                    doc.Print();
+                }
             }
         }
     }

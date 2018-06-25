@@ -10,5 +10,6 @@ namespace GEV.Falcon.RFID.Client
     {
         public string CardNumber { get; set; }
         public string Worker { get; set; }
+        public string Department { get; set; }
     }
 }

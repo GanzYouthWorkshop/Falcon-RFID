@@ -40,7 +40,7 @@ namespace GEV.Falcon.RFID.Client
         public List<CheckinEntry> Query(DateTime from, DateTime to)
         {
             HttpClient client = new HttpClient();
-            client.Timeout = new TimeSpan(0, 0, 0, 0, 1000);
+            client.Timeout = new TimeSpan(0, 0, 0, 0, 1500);
 
             List<CheckinEntry> checkins = new List<CheckinEntry>();
 

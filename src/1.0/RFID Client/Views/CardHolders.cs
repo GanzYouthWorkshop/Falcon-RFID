@@ -23,7 +23,7 @@ namespace GEV.Falcon.RFID.Views
         {
             foreach (CardHolder item in MainWindow.Config.CardHolders)
             {
-                this.gclDataGrid1.Rows.Add(item.CardNumber, item.Worker);
+                this.gclDataGrid1.Rows.Add(item.CardNumber, item.Worker, item.Department);
             }
 
             this.gclDataGrid1.CellValueChanged += gclDataGrid1_CellValueChanged;
@@ -37,8 +37,9 @@ namespace GEV.Falcon.RFID.Views
             {
                 string s1 = row.Cells[1].Value != null ? row.Cells[0].Value.ToString() : "";
                 string s2 = row.Cells[1].Value != null ? row.Cells[1].Value.ToString() : "";
+                string s3 = row.Cells[1].Value != null ? row.Cells[2].Value as string : "";
 
-                if(s1 == "" || s2 == "")
+                if (s1 == "" || s2 == "")
                 {
                     continue;
                 }
@@ -46,7 +47,8 @@ namespace GEV.Falcon.RFID.Views
                 MainWindow.Config.CardHolders.Add(new CardHolder()
                 {
                     CardNumber = s1,
-                    Worker = s2
+                    Worker = s2,
+                    Department = s3
                 });
             }
 

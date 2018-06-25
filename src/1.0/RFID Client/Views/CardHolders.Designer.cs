@@ -34,6 +34,7 @@
             this.gclDataGrid1 = new GEV.Layouts.DataGrid.GCLDataGrid();
             this.Card = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Worker = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Department = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gclDataGrid1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@
             this.gclDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gclDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Card,
-            this.Worker});
+            this.Worker,
+            this.Department});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(76)))), ((int)(((byte)(79)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,6 +68,7 @@
             this.gclDataGrid1.EnableHeadersVisualStyles = false;
             this.gclDataGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
             this.gclDataGrid1.Location = new System.Drawing.Point(0, 0);
+            this.gclDataGrid1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gclDataGrid1.Name = "gclDataGrid1";
             this.gclDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -75,9 +78,10 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.gclDataGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.gclDataGrid1.RowHeadersVisible = false;
             this.gclDataGrid1.RowTemplate.Height = 24;
             this.gclDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gclDataGrid1.Size = new System.Drawing.Size(843, 442);
+            this.gclDataGrid1.Size = new System.Drawing.Size(632, 359);
             this.gclDataGrid1.TabIndex = 5;
             // 
             // Card
@@ -92,13 +96,22 @@
             this.Worker.HeaderText = "Kártyatulajdonos";
             this.Worker.Name = "Worker";
             // 
+            // Department
+            // 
+            this.Department.HeaderText = "Beosztás";
+            this.Department.Items.AddRange(new object[] {
+            "gépész",
+            "elektromos"});
+            this.Department.Name = "Department";
+            // 
             // CardHolders
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gclDataGrid1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CardHolders";
-            this.Size = new System.Drawing.Size(843, 442);
+            this.Size = new System.Drawing.Size(632, 359);
             ((System.ComponentModel.ISupportInitialize)(this.gclDataGrid1)).EndInit();
             this.ResumeLayout(false);
 
@@ -109,5 +122,6 @@
         private GEV.Layouts.DataGrid.GCLDataGrid gclDataGrid1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Card;
         private System.Windows.Forms.DataGridViewTextBoxColumn Worker;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Department;
     }
 }

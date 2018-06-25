@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falcon RFID GUI", "Falcon R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falcon RFID Commons", "Falcon RFID Commons\Falcon RFID Commons.csproj", "{3C1A83C5-9DCC-4646-BD97-C115B140DCE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GEV Control Layouts Plus", "..\..\..\GEV-Control-Layouts\src\GEV Control Layouts Plus\GEV Control Layouts Plus.csproj", "{D93E1488-F699-411A-852F-858BC268F87C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{3C1A83C5-9DCC-4646-BD97-C115B140DCE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C1A83C5-9DCC-4646-BD97-C115B140DCE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C1A83C5-9DCC-4646-BD97-C115B140DCE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D93E1488-F699-411A-852F-858BC268F87C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D93E1488-F699-411A-852F-858BC268F87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D93E1488-F699-411A-852F-858BC268F87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D93E1488-F699-411A-852F-858BC268F87C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,5 +75,6 @@ Global
 		{677BBE0E-F8C8-4AF3-A398-ED0CE7C22E69} = {C7BC7526-380B-46EB-BAF3-DDA717884BFD}
 		{BE59ADB1-60AC-46A8-9777-CDE4FC12B4CB} = {0F2143E3-F4BD-41FC-AC93-368C9BD8F8E7}
 		{3C1A83C5-9DCC-4646-BD97-C115B140DCE1} = {B856A533-F53B-42E7-BEEA-F12912C2B57F}
+		{D93E1488-F699-411A-852F-858BC268F87C} = {C7BC7526-380B-46EB-BAF3-DDA717884BFD}
 	EndGlobalSection
 EndGlobal
