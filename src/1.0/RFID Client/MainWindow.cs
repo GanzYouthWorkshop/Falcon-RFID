@@ -103,5 +103,10 @@ namespace RFID_Client
                 }
             }
         }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            this.networkDiscoverer1.RunDiscovery();
+        }
     }
 }

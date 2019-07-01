@@ -33,9 +33,13 @@ namespace GEV.Falcon.RFID.Views
             }
         }
 
-        private async void gclButton1_Click(object sender, EventArgs e)
+        private void gclButton1_Click(object sender, EventArgs e)
         {
+            this.RunDiscovery();
+        }
 
+        public async void RunDiscovery()
+        {
             this.lmProgress.Value = 0;
             this.lmProgress.Title = "Hálózati felderítés folyamatban...";
 
@@ -66,11 +70,10 @@ namespace GEV.Falcon.RFID.Views
                 }
             }
 
-            foreach(ReaderStation r in MainWindow.Config.LastReaderStations)
+            foreach (ReaderStation r in MainWindow.Config.LastReaderStations)
             {
                 r.Status = ReaderStation.Statuses.NotKnown;
             }
-
         }
 
         private void OnFail(object sender, EventArgs e)

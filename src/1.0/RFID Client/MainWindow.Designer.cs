@@ -36,20 +36,26 @@
             this.gclTabControl1 = new GEV.Layouts.GCLTabControl();
             this.tabMain = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
+            this.mainMenu1 = new GEV.Falcon.RFID.Views.MainMenu();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBack1 = new GEV.Layouts.GCLButton();
+            this.networkDiscoverer1 = new GEV.Falcon.RFID.Views.NetworkDiscovery();
             this.tabLog = new System.Windows.Forms.TabPage();
             this.gclButton2 = new GEV.Layouts.GCLButton();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBack2 = new GEV.Layouts.GCLButton();
+            this.log1 = new GEV.Falcon.RFID.Views.Log();
             this.tabCards = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.btnBack3 = new GEV.Layouts.GCLButton();
+            this.cardHolders1 = new GEV.Falcon.RFID.Views.CardHolders();
             this.tabQuery = new System.Windows.Forms.TabPage();
+            this.btnPrint = new GEV.Layouts.GCLButton();
             this.gclButton1 = new GEV.Layouts.GCLButton();
             this.btnBack4 = new GEV.Layouts.GCLButton();
             this.label5 = new System.Windows.Forms.Label();
+            this.query1 = new GEV.Falcon.RFID.Views.Query();
             this.tabAbout = new System.Windows.Forms.TabPage();
             this.btnBack5 = new GEV.Layouts.GCLButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -58,12 +64,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnPrint = new GEV.Layouts.GCLButton();
-            this.mainMenu1 = new GEV.Falcon.RFID.Views.MainMenu();
-            this.networkDiscoverer1 = new GEV.Falcon.RFID.Views.NetworkDiscovery();
-            this.log1 = new GEV.Falcon.RFID.Views.Log();
-            this.cardHolders1 = new GEV.Falcon.RFID.Views.CardHolders();
-            this.query1 = new GEV.Falcon.RFID.Views.Query();
             this.panel1.SuspendLayout();
             this.gclPanel1.SuspendLayout();
             this.gclTabControl1.SuspendLayout();
@@ -171,6 +171,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Üdvözöljük!";
             // 
+            // mainMenu1
+            // 
+            this.mainMenu1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mainMenu1.Font = new System.Drawing.Font("Segoe UI Symbol", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainMenu1.Location = new System.Drawing.Point(310, 212);
+            this.mainMenu1.Name = "mainMenu1";
+            this.mainMenu1.Size = new System.Drawing.Size(405, 272);
+            this.mainMenu1.TabIndex = 0;
+            // 
             // tabSettings
             // 
             this.tabSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
@@ -212,6 +221,17 @@
             this.btnBack1.UseThemeColors = true;
             this.btnBack1.UseVisualStyleBackColor = false;
             this.btnBack1.Click += new System.EventHandler(this.OnBackToMainMenu);
+            // 
+            // networkDiscoverer1
+            // 
+            this.networkDiscoverer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.networkDiscoverer1.Location = new System.Drawing.Point(6, 49);
+            this.networkDiscoverer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.networkDiscoverer1.Name = "networkDiscoverer1";
+            this.networkDiscoverer1.Size = new System.Drawing.Size(1013, 603);
+            this.networkDiscoverer1.TabIndex = 0;
             // 
             // tabLog
             // 
@@ -275,6 +295,17 @@
             this.btnBack2.UseVisualStyleBackColor = false;
             this.btnBack2.Click += new System.EventHandler(this.OnBackToMainMenu);
             // 
+            // log1
+            // 
+            this.log1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.log1.Location = new System.Drawing.Point(6, 49);
+            this.log1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.log1.Name = "log1";
+            this.log1.Size = new System.Drawing.Size(1013, 603);
+            this.log1.TabIndex = 3;
+            // 
             // tabCards
             // 
             this.tabCards.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
@@ -317,6 +348,17 @@
             this.btnBack3.UseVisualStyleBackColor = false;
             this.btnBack3.Click += new System.EventHandler(this.OnBackToMainMenu);
             // 
+            // cardHolders1
+            // 
+            this.cardHolders1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cardHolders1.Location = new System.Drawing.Point(6, 49);
+            this.cardHolders1.Margin = new System.Windows.Forms.Padding(2);
+            this.cardHolders1.Name = "cardHolders1";
+            this.cardHolders1.Size = new System.Drawing.Size(1013, 603);
+            this.cardHolders1.TabIndex = 0;
+            // 
             // tabQuery
             // 
             this.tabQuery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
@@ -331,6 +373,25 @@
             this.tabQuery.Size = new System.Drawing.Size(1024, 697);
             this.tabQuery.TabIndex = 5;
             this.tabQuery.Text = "tabPage1";
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(76)))), ((int)(((byte)(79)))));
+            this.btnPrint.Checked = false;
+            this.btnPrint.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
+            this.btnPrint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
+            this.btnPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(158)))), ((int)(((byte)(202)))));
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnPrint.Location = new System.Drawing.Point(787, 657);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(113, 34);
+            this.btnPrint.TabIndex = 16;
+            this.btnPrint.Text = "Nyomtatás...";
+            this.btnPrint.UseThemeColors = true;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // gclButton1
             // 
@@ -379,6 +440,18 @@
             this.label5.Size = new System.Drawing.Size(125, 37);
             this.label5.TabIndex = 6;
             this.label5.Text = "Kimutatás";
+            // 
+            // query1
+            // 
+            this.query1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.query1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
+            this.query1.Location = new System.Drawing.Point(6, 48);
+            this.query1.Margin = new System.Windows.Forms.Padding(2);
+            this.query1.Name = "query1";
+            this.query1.Size = new System.Drawing.Size(1013, 604);
+            this.query1.TabIndex = 14;
             // 
             // tabAbout
             // 
@@ -483,79 +556,6 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // btnPrint
-            // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(76)))), ((int)(((byte)(79)))));
-            this.btnPrint.Checked = false;
-            this.btnPrint.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(65)))));
-            this.btnPrint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(134)))), ((int)(((byte)(171)))));
-            this.btnPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(158)))), ((int)(((byte)(202)))));
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnPrint.Location = new System.Drawing.Point(787, 657);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(113, 34);
-            this.btnPrint.TabIndex = 16;
-            this.btnPrint.Text = "Nyomtatás...";
-            this.btnPrint.UseThemeColors = true;
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // mainMenu1
-            // 
-            this.mainMenu1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mainMenu1.Font = new System.Drawing.Font("Segoe UI Symbol", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainMenu1.Location = new System.Drawing.Point(310, 212);
-            this.mainMenu1.Name = "mainMenu1";
-            this.mainMenu1.Size = new System.Drawing.Size(405, 272);
-            this.mainMenu1.TabIndex = 0;
-            // 
-            // networkDiscoverer1
-            // 
-            this.networkDiscoverer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.networkDiscoverer1.Location = new System.Drawing.Point(6, 49);
-            this.networkDiscoverer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.networkDiscoverer1.Name = "networkDiscoverer1";
-            this.networkDiscoverer1.Size = new System.Drawing.Size(1013, 603);
-            this.networkDiscoverer1.TabIndex = 0;
-            // 
-            // log1
-            // 
-            this.log1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.log1.Location = new System.Drawing.Point(6, 49);
-            this.log1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.log1.Name = "log1";
-            this.log1.Size = new System.Drawing.Size(1013, 603);
-            this.log1.TabIndex = 3;
-            // 
-            // cardHolders1
-            // 
-            this.cardHolders1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cardHolders1.Location = new System.Drawing.Point(6, 49);
-            this.cardHolders1.Margin = new System.Windows.Forms.Padding(2);
-            this.cardHolders1.Name = "cardHolders1";
-            this.cardHolders1.Size = new System.Drawing.Size(1013, 603);
-            this.cardHolders1.TabIndex = 0;
-            // 
-            // query1
-            // 
-            this.query1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.query1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
-            this.query1.Location = new System.Drawing.Point(6, 48);
-            this.query1.Margin = new System.Windows.Forms.Padding(2);
-            this.query1.Name = "query1";
-            this.query1.Size = new System.Drawing.Size(1013, 604);
-            this.query1.TabIndex = 14;
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -568,6 +568,7 @@
             this.Name = "MainWindow";
             this.ShowIcon = false;
             this.Text = "Falcon RFID";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panel1.ResumeLayout(false);
             this.gclPanel1.ResumeLayout(false);
             this.gclTabControl1.ResumeLayout(false);
